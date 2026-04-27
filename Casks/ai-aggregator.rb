@@ -9,6 +9,15 @@ cask "ai-aggregator" do
 
   app "AIAggregator.app"
 
+  postflight do
+    system_command "xattr",
+                   args: ["-cr", "#{appdir}/AIAggregator.app"],
+                   sudo: false
+    system_command "codesign",
+                   args: ["--force", "--deep", "--sign", "-", "#{appdir}/AIAggregator.app"],
+                   sudo: false
+  end
+
   zap trash: [
     "~/Library/Preferences/com.graywzc.AIAggregator.plist",
     "~/Library/Saved Application State/com.graywzc.AIAggregator.savedState",
