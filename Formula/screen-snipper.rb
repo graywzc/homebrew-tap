@@ -5,7 +5,6 @@ class ScreenSnipper < Formula
   sha256 "866a62fd6dd9524e4dc7894f8aeca78ee421e88af5b9983103141d86b87af42f"
   license :cannot_represent
 
-  depends_on xcode: :build
   depends_on macos: :sonoma
 
   def install
