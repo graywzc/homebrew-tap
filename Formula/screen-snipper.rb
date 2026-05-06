@@ -1,8 +1,8 @@
 class ScreenSnipper < Formula
   desc "Tiny macOS screen-region recorder for GIFs and MP4 video"
   homepage "https://github.com/graywzc/screen-snipper"
-  url "https://github.com/graywzc/screen-snipper/releases/download/v0.1.3/screen-snipper-0.1.3-macos.tar.gz"
-  sha256 "1b0f8cd5d19d47c3c5b19b7164c7ed3001b07bad7354f365e1c4d49e155d245d"
+  url "https://github.com/graywzc/screen-snipper/releases/download/v0.0.0-test1/screen-snipper-0.0.0-test1-macos.tar.gz"
+  sha256 "843ec334db2bd6b20ed36bc4458e113c4fe07f9959200b7ac972ec64a6395e2b"
   license :cannot_represent
 
   depends_on macos: :sonoma
