@@ -18,7 +18,7 @@ class ScreenSnipper < Formula
 
     if File.executable?("/usr/bin/shortcuts")
       existing = Utils.safe_popen_read("/usr/bin/shortcuts", "list").lines.map(&:strip)
-      return if existing.include?("Screen Snipper")
+      return if existing.include?("ScreenSnipper")
     end
 
     system "open", shortcut.to_s
@@ -26,16 +26,16 @@ class ScreenSnipper < Formula
 
   def caveats
     <<~EOS
-      A macOS Shortcut named "Screen Snipper" was opened for import. Click
+      A macOS Shortcut named "ScreenSnipper" was opened for import. Click
       "Add Shortcut" in the Shortcuts.app dialog if it appeared.
 
       To trigger it with a hotkey:
         1. Open Shortcuts.app
-        2. Select "Screen Snipper"
+        2. Select "ScreenSnipper"
         3. Open the details panel (i icon)
         4. Click "Add Keyboard Shortcut" and press your combo (e.g. Cmd-Shift-7)
 
-      While Screen Snipper is open:
+      While ScreenSnipper is open:
         Cmd-Shift-Space  start/stop recording
         Cmd-Shift-7      close the app
     EOS
