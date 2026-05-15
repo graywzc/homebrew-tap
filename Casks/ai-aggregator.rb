@@ -1,10 +1,10 @@
 cask "ai-aggregator" do
-  version "1.2.0"
-  sha256 "f9ef4e90a8c0416a061214dd23e0487d4eabedcab8505b6e52b7f00cb3a47211"
+  version "1.3.0"
+  sha256 "27abc29be4c1a1beb401ad91778868e7127b2e9e9429646dfe09dad973a54301"
 
   url "https://github.com/graywzc/ai-aggregator/releases/download/v#{version}/AIAggregator.zip"
   name "AI Aggregator"
-  desc "macOS menu bar app to track AI usage limits"
+  desc "Menu bar app to track AI usage limits"
   homepage "https://github.com/graywzc/ai-aggregator"
 
   app "AIAggregator.app"
