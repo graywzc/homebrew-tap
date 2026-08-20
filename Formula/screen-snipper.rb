@@ -37,6 +37,7 @@ class ScreenSnipper < Formula
 
       While ScreenSnipper is open:
         Cmd-Shift-Space  start/stop recording
+        Cmd-Shift-M      jump the capture area to the next monitor
         Cmd-Shift-7      close the app
     EOS
   end
