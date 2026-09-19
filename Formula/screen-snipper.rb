@@ -12,22 +12,11 @@ class ScreenSnipper < Formula
     pkgshare.install "ScreenSnipper.shortcut"
   end
 
-  def post_install
-    shortcut = pkgshare/"ScreenSnipper.shortcut"
-    return unless shortcut.exist?
-
-    if File.executable?("/usr/bin/shortcuts")
-      existing = Utils.safe_popen_read("/usr/bin/shortcuts", "list").lines.map(&:strip)
-      return if existing.include?("ScreenSnipper")
-    end
-
-    system "open", shortcut.to_s
-  end
-
   def caveats
     <<~EOS
-      A macOS Shortcut named "ScreenSnipper" was opened for import. Click
-      "Add Shortcut" in the Shortcuts.app dialog if it appeared.
+      To import the bundled macOS Shortcut named "ScreenSnipper", run:
+        open #{opt_pkgshare}/ScreenSnipper.shortcut
+      and click "Add Shortcut" in the Shortcuts.app dialog.
 
       To trigger it with a hotkey:
         1. Open Shortcuts.app

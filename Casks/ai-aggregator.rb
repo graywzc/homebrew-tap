@@ -11,21 +11,24 @@ cask "ai-aggregator" do
 
   app "AIAggregator.app"
 
-  postflight do
+  postflight_steps do
     # 1. Quit the app if running
-    system_command "/usr/bin/pkill", args: ["-x", "AIAggregator"], must_succeed: false
+    terminate_process "AIAggregator"
 
     # 2. Fix quarantine and signature
-    system_command "xattr",
-                   args: ["-cr", "#{appdir}/AIAggregator.app"],
-                   sudo: false
-    system_command "codesign",
-                   args: ["--force", "--deep", "--sign", "-", "#{appdir}/AIAggregator.app"],
-                   sudo: false
-
-    # 3. Relaunch the app
-    system_command "/usr/bin/open", args: ["#{appdir}/AIAggregator.app"], sudo: false
+    run "/usr/bin/xattr",
+        args:           ["-cr", "{{appdir}}/AIAggregator.app"],
+        writable_paths: ["AIAggregator.app"],
+        writable_base:  :appdir
+    run "/usr/bin/codesign",
+        args:           ["--force", "--deep", "--sign", "-", "{{appdir}}/AIAggregator.app"],
+        writable_paths: ["AIAggregator.app"],
+        writable_base:  :appdir
   end
+
+  # Steps run in Homebrew's sandbox, where `open` cannot launch apps. With
+  # `quit`, `brew upgrade` closes the running app and reopens it afterwards.
+  uninstall quit: "com.graywzc.AIAggregator"
 
   zap trash: [
     "~/Library/Preferences/com.graywzc.AIAggregator.plist",
