@@ -1,6 +1,6 @@
 cask "ai-aggregator" do
-  version "1.3.2"
-  sha256 "6c578766ed445e37643117fa444731ae06cca3bf8b550b1d5832a1ed825d6289"
+  version "1.4.0"
+  sha256 "03329dd2fa16ce9005e6198e212f25693f3b9e86775fe10691524771c28c03dd"
 
   url "https://github.com/graywzc/ai-aggregator/releases/download/v#{version}/AIAggregator.zip"
   name "AI Aggregator"
