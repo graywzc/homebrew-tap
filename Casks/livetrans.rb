@@ -1,6 +1,6 @@
 cask "livetrans" do
-  version "0.1.55"
-  sha256 "6e6458808c77eefa36794bf1eaf78d5e1b7e264218468edab227d96763aceda6"
+  version "0.1.56"
+  sha256 "9fd26f52d85b7ac73955fa669dc33c99d6277a6c657c3eefe8c85a093f5f3581"
 
   url "https://github.com/graywzc/live-trans/releases/download/v#{version}/LiveTrans.zip"
   name "LiveTrans"
